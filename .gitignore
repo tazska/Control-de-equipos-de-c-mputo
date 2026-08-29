@@ -1,0 +1,79 @@
+# ==============================================================================
+# Django Core & Databases
+# ==============================================================================
+*.sqlite3
+*.db
+local_settings.py
+db.sqlite3-journal
+
+# ==============================================================================
+# Python Build, Cache, and System Artifacts
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================================================================
+# Environment Variables & Secrets (CRITICAL for Security)
+# ==============================================================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# User-Uploaded Media & Collected Static Files
+# ==============================================================================
+media/
+staticfiles/
+static_cdn/
+
+# ==============================================================================
+# Text Editors and IDEs (VS Code, PyCharm, etc.)
+# ==============================================================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+
+# ==============================================================================
+# Testing, Coverage, and Linting
+# ==============================================================================
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
