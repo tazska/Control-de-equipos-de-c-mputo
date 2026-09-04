@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Inicio - Control de Equipos{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Control de Equipos de Computo</h1>
+    <p class="lead text-muted">Sistema de gestion para administrar equipos de computo registrados.</p>
+    <hr>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ver Equipos</h5>
+                    <p class="card-text">Consulta la lista completa de equipos registrados.</p>
+                    <a href="{% url 'equipo_list' %}" class="btn btn-primary">Listar Equipos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Registrar Equipo</h5>
+                    <p class="card-text">Agrega un nuevo equipo al sistema.</p>
+                    <a href="{% url 'equipo_create' %}" class="btn btn-success">Nuevo Equipo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

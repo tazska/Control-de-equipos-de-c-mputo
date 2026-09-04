@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Lista de Equipos{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Equipos Registrados</h2>
+    <a href="{% url 'equipo_create' %}" class="btn btn-success">+ Nuevo Equipo</a>
+</div>
+
+{% if equipo_list %}
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Codigo Interno</th>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Serial</th>
+                <th>Ubicacion</th>
+                <th>Estado</th>
+                <th>Fecha Registro</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipo_list %}
+            <tr>
+                <td>{{ equipo.codigo_interno }}</td>
+                <td>{{ equipo.get_tipo_equipo_display }}</td>
+                <td>{{ equipo.marca }}</td>
+                <td>{{ equipo.serial }}</td>
+                <td>{{ equipo.ubicacion }}</td>
+                <td>{{ equipo.get_estado_display }}</td>
+                <td>{{ equipo.fecha_registro|date:"d/m/Y H:i" }}</td>
+                <td>
+                    <a href="{% url 'equipo_detail' equipo.pk %}" class="btn btn-sm btn-info text-white">Ver</a>
+                    <a href="{% url 'equipo_edit' equipo.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'equipo_delete' equipo.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-info">
+    No hay equipos registrados. <a href="{% url 'equipo_create' %}">Agrega uno nuevo</a>.
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{% if object.pk %}Editar Equipo{% else %}Nuevo Equipo{% endif %} - Control de Equipos{% endblock %}
+
+{% block content %}
+<h2>{% if object.pk %}Editar Equipo: {{ object.codigo_interno }}{% else %}Registrar Nuevo Equipo{% endif %}</h2>
+<hr>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label"><strong>{{ field.label }}</strong></label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="text-danger">
+                        {% for error in field.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="{% url 'equipo_list' %}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Eliminar Equipo - Control de Equipos{% endblock %}
+
+{% block content %}
+<h2>Eliminar Equipo</h2>
+<hr>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-body text-center">
+                <h5 class="card-title text-danger">Confirmar eliminacion</h5>
+                <p class="card-text">
+                    Estas seguro de que deseas eliminar el equipo
+                    <strong>{{ object.codigo_interno }}</strong>
+                    ({{ object.marca }} - {{ object.get_tipo_equipo_display }})?
+                </p>
+                <p class="text-muted"><small>Esta accion no se puede deshacer.</small></p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Si, eliminar</button>
+                    <a href="{% url 'equipo_detail' object.pk %}" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

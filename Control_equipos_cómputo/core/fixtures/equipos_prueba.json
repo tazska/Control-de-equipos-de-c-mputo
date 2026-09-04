@@ -1,0 +1,67 @@
+[
+  {
+    "model": "core.equipo",
+    "pk": 1,
+    "fields": {
+      "codigo_interno": "EQ-001",
+      "tipo_equipo": "desktop",
+      "marca": "Dell",
+      "serial": "SN-DELL-2024-001",
+      "ubicacion": "Aula 101",
+      "estado": "disponible",
+      "fecha_registro": "2025-01-15T08:30:00Z"
+    }
+  },
+  {
+    "model": "core.equipo",
+    "pk": 2,
+    "fields": {
+      "codigo_interno": "EQ-002",
+      "tipo_equipo": "laptop",
+      "marca": "HP",
+      "serial": "SN-HP-2024-002",
+      "ubicacion": "Oficina 201",
+      "estado": "en_uso",
+      "fecha_registro": "2025-02-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.equipo",
+    "pk": 3,
+    "fields": {
+      "codigo_interno": "EQ-003",
+      "tipo_equipo": "monitor",
+      "marca": "Samsung",
+      "serial": "SN-SAM-2024-003",
+      "ubicacion": "Aula 102",
+      "estado": "disponible",
+      "fecha_registro": "2025-03-05T10:15:00Z"
+    }
+  },
+  {
+    "model": "core.equipo",
+    "pk": 4,
+    "fields": {
+      "codigo_interno": "EQ-004",
+      "tipo_equipo": "impresora",
+      "marca": "Epson",
+      "serial": "SN-EPS-2024-004",
+      "ubicacion": "Biblioteca",
+      "estado": "en_reparacion",
+      "fecha_registro": "2025-04-20T14:45:00Z"
+    }
+  },
+  {
+    "model": "core.equipo",
+    "pk": 5,
+    "fields": {
+      "codigo_interno": "EQ-005",
+      "tipo_equipo": "servidor",
+      "marca": "Lenovo",
+      "serial": "SN-LEN-2024-005",
+      "ubicacion": "Sala de servidores",
+      "estado": "disponible",
+      "fecha_registro": "2025-05-12T11:00:00Z"
+    }
+  }
+]
